@@ -13,7 +13,7 @@ app.use(compress());
 // Connect to Mongoose:
 mongoose.connect(config['api'].mongo.uri);
 
-// Model, keep data in cache for 7 days
+// Model, keep data in cache for 15 days
 var CachedQuery = mongoose.model('Cache', {
   query: String,
   photos: Array,
