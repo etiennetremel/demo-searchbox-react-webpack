@@ -1,0 +1,81 @@
+//
+// Loading animation
+// cf: http://codepen.io/fbrz/pen/yEHok
+//------------------------------------------
+
+.loader {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(255,255,255,0.75);
+
+  &.active {
+    display: block;
+  }
+
+  .wrapper {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px -50px;
+
+
+    div {
+      border-radius: 50%;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+
+      -webkit-animation-name: loadingAnimation;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+
+      animation-name: loadingAnimation;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .d2 {
+      -webkit-animation-delay: -.4s;
+      animation-delay: -.4s;
+    }
+    .d3 {
+      -webkit-animation-delay: -.8s;
+      animation-delay: -.8s;
+    }
+    .d4 {
+      -webkit-animation-delay: -1.2s;
+      animation-delay: -1.2s;
+    }
+    .d5 {
+      -webkit-animation-delay: -1.6s;
+      animation-delay: -1.6s;
+    }
+  }
+}
+
+@-webkit-keyframes loadingAnimation {
+  0% { left: 100px; top:0}
+  80% { left: 0; top:0;}
+  85% { left: 0; top: -20px; width: 20px; height: 20px;}
+  90% { width: 40px; height: 15px; }
+  95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+  100% { left: 100px; top:0; }
+}
+
+@keyframes loadingAnimation {
+  0% { left: 100px; top:0}
+  80% { left: 0; top:0;}
+  85% { left: 0; top: -20px; width: 20px; height: 20px;}
+  90% { width: 40px; height: 15px; }
+  95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+  100% { left: 100px; top:0; }
+}
